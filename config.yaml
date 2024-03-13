@@ -1,0 +1,10 @@
+configToml:
+  - instrumentation:
+    - namespace: "hellWOrld"
+
+  - goodHelo: "second"
+  - third: "!FWEOISDJ"
+
+appToml:
+  - state_sync:
+    - snapshot_interval: "12"
