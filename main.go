@@ -78,27 +78,27 @@ func parse() {
 		panic(err)
 	}
 
-	//if len(config.ConfigToml) <= 0 {
-	//	return
-	//}
-	//fmt.Printf("======== custom config.toml ========\n")
-	//for key, value := range ConvertToMapStringInterface(config.ConfigToml) {
-	//	fmt.Printf("%s, %s\n", key, value)
-	//}
-	//
-	//configTomlOut, err := configTomlJ2.Execute(ConvertToMapStringInterface(config.ConfigToml))
-	//if err != nil {
-	//	panic(err)
-	//}
-	//
-	//configTomlOutFile, err := os.Create("out/config.toml")
-	//if err != nil {
-	//	panic(err)
-	//}
-	//_, err = configTomlOutFile.Write([]byte(configTomlOut))
-	//if err != nil {
-	//	panic(err)
-	//}
+	if len(config.ConfigToml) <= 0 {
+		return
+	}
+	fmt.Printf("======== custom config.toml ========\n")
+	for key, value := range ConvertToMapStringInterface(config.ConfigToml) {
+		fmt.Printf("%s, %s\n", key, value)
+	}
+
+	configTomlOut, err := configTomlJ2.Execute(ConvertToMapStringInterface(config.ConfigToml))
+	if err != nil {
+		panic(err)
+	}
+
+	configTomlOutFile, err := os.Create("out/config.toml")
+	if err != nil {
+		panic(err)
+	}
+	_, err = configTomlOutFile.Write([]byte(configTomlOut))
+	if err != nil {
+		panic(err)
+	}
 
 	if len(config.AppToml) <= 0 {
 		return
