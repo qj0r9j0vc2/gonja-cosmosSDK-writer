@@ -31,4 +31,4 @@ snapshot-keep-recent = "2"
 [instrumentation]
 ....
 namespace = "hellWOrld"
-```
+```# dynamic-cosmosSDK-writer
